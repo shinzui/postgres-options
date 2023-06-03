@@ -1,3 +1,4 @@
+cabal-version: 3.4
 name:          postgres-options
 version:       0.2.0.0
 synopsis:
@@ -7,16 +8,13 @@ description:
   This package exports an Options type representing options for postgres connections
 
 homepage:      https://github.com/jfischoff/postgres-options#readme
-license:       BSD3
+license:       BSD-3-Clause
 license-file:  LICENSE
 author:        Jonathan Fischoff
 maintainer:    jonathangfischoff@gmail.com
 copyright:     2019 Jonathan Fischoff
 category:      Database
 build-type:    Simple
-
--- extra-source-files:
-cabal-version: >=1.10
 
 library
   hs-source-dirs:     src

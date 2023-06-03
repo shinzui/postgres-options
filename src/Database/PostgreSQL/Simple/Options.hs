@@ -12,9 +12,10 @@ import Control.Monad (foldM, (<=<))
 import Data.ByteString (ByteString)
 import Data.ByteString qualified as BS
 import Data.ByteString.Char8 qualified as BSC
+import Data.Functor.Alt
 import Data.List (intercalate)
 import Data.List.Split (splitOn)
-import Data.Maybe (Maybe, maybeToList)
+import Data.Maybe (maybeToList)
 import Data.Monoid
 import Data.Monoid.Generic
 import Data.Typeable (Typeable)
@@ -212,4 +213,4 @@ parseKeywords x = fmap mconcat . mapM (uncurry keywordToptions <=< toTuple . spl
 parseConnectionString :: String -> Either String Options
 parseConnectionString url = do
   url' <- maybe (Left "failed to parse as string") Right $ parseString url
-  parseKeywords url' <|> (uriToptions =<< parseURIStr url')
+  parseKeywords url' <!> (uriToptions =<< parseURIStr url')

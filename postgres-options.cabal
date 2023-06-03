@@ -20,9 +20,10 @@ library
   hs-source-dirs:     src
   exposed-modules:    Database.PostgreSQL.Simple.Options
   build-depends:
-      base            >=4.6 && <5
+    , base            >=4.6 && <5
     , bytestring
     , generic-monoid
+    , semigroupoids
     , split
     , uri-bytestring
 
@@ -41,7 +42,7 @@ test-suite unit-tests
   hs-source-dirs:   test
   main-is:          Spec.hs
   build-depends:
-      base
+    , base
     , hspec
     , postgres-options
 

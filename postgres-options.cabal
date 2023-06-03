@@ -28,15 +28,13 @@ library
     , split
     , uri-bytestring
 
-  default-language:   Haskell2010
+  default-language:   GHC2021
   ghc-options:        -Wall -fno-warn-unused-do-bind
   default-extensions:
-    DeriveGeneric
-    DerivingStrategies
     DerivingVia
-    GADTs
     LambdaCase
     OverloadedStrings
+    GADTs
     RecordWildCards
     TupleSections
 
